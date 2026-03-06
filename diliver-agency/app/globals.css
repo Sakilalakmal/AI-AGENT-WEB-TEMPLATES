@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090909;
+  --foreground: #f7f5f3;
+  --page: #060606;
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --brand: #ff2307;
+  --brand-soft: #ff6247;
+  --brand-shadow: rgba(255, 35, 7, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-page: var(--page);
+  --font-sans: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+::selection {
+  background: rgba(255, 35, 7, 0.35);
+  color: white;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-family: var(--font-sora), sans-serif;
+}
+
+.hero-shell {
+  background:
+    radial-gradient(circle at top center, rgba(255, 35, 7, 0.18), transparent 28%),
+    radial-gradient(circle at center, rgba(83, 14, 10, 0.68), transparent 50%),
+    linear-gradient(180deg, #080808 0%, #0d0909 48%, #060606 100%);
+}
+
+.hero-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 42%, rgba(255, 35, 7, 0.26), transparent 26%),
+    linear-gradient(180deg, rgba(6, 6, 6, 0.2) 0%, rgba(6, 6, 6, 0.7) 100%);
+  pointer-events: none;
+}
+
+.section-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(8, 8, 8, 0.92);
+  border: 1px solid var(--border-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.grid-glow {
+  position: absolute;
+  inset: auto;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 35, 7, 0.18) 0%, rgba(255, 35, 7, 0) 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.reveal-up {
+  animation: reveal-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.36s;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-up,
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3 {
+    animation: none;
+  }
+}
