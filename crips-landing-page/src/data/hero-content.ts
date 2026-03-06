@@ -5,9 +5,9 @@ export const heroContent: HeroContent = {
   announcement: "Small-batch crunch, presented fresh.",
   navItems: [
     { label: "Home", href: "#" },
-    { label: "Products", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Features", href: "#features" },
+    { label: "Stories", href: "#stories" },
+    { label: "Contact", href: "#contact" },
   ],
   headlineLeading: "Everyone's favorite",
   headlineAccent: "Crips.",
@@ -15,7 +15,7 @@ export const heroContent: HeroContent = {
     "Crafted for modern snack shelves with bright seasoning, airy crunch, and a premium look that feels instantly shelf-ready.",
   primaryCta: {
     label: "Add to cart",
-    href: "#shop",
+    href: "#features",
   },
   secondaryCta: {
     label: "Bulk order",
