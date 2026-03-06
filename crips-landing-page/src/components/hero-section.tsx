@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 
+import LiquidEther from "@/components/liquid-ether";
 import { Button } from "@/components/ui/button";
 import type { HeroContent } from "@/types/hero";
 
@@ -11,7 +12,27 @@ type HeroSectionProps = {
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (
-    <section className="hero-frame-shadow relative isolate min-h-[calc(100vh-1.5rem)] overflow-hidden rounded-[2rem] border-[3px] border-[var(--hero-accent)] bg-[var(--hero-surface)] text-[var(--hero-text)] md:min-h-[calc(100vh-2.5rem)]">
+    <section className="relative isolate min-h-screen overflow-hidden bg-[var(--hero-surface)] text-[var(--hero-text)]">
+      <div className="absolute inset-0 z-0 opacity-55">
+        <LiquidEther
+          colors={["#8ED8FF", "#53B4FF", "#B9E9FF"]}
+          mouseForce={18}
+          cursorSize={110}
+          isViscous
+          viscous={28}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.45}
+          isBounce={false}
+          autoDemo
+          autoSpeed={0.42}
+          autoIntensity={1.8}
+          takeoverDuration={0.3}
+          autoResumeDelay={2200}
+          autoRampDuration={0.8}
+        />
+      </div>
+
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 -top-36 size-[26rem] rounded-full bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.55),_rgba(255,255,255,0.2)_48%,_transparent_49%)] opacity-90" />
         <div className="absolute -left-10 top-1/2 h-[24rem] w-[9rem] -translate-y-1/2 rounded-full bg-white/16 blur-3xl" />
